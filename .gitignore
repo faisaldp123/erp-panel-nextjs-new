@@ -1,0 +1,21 @@
+# Ignore Node.js and npm files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore build output
+/.next/
+/out/
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore IDE and editor-specific files
+.vscode/
+.idea/
+
+# Ignore macOS system files
+.DS_Store
