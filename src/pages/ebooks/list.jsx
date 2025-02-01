@@ -1,184 +1,128 @@
-import { useState, useEffect } from 'react';
 import {
+
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
   Card,
+  Grid,
+  CardContent,
+  Stack,
+  Autocomplete,
+  TableContainer,
   Table,
   TableHead,
-  TableBody,
   TableRow,
   TableCell,
-  TableContainer,
-  Chip,
-  Button,
-  Modal,
-  Box,
-  Typography,
-  Stack,
-  TextField,
-  MenuItem,
-} from '@mui/material';
+  TableBody,
+  Button
 
-import Link from 'next/link';
+} from "@mui/material";
+import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+const inter = Inter({ subsets: ["latin"] });
 
 
-import { useNotification } from '@/hooks/useNotification';
-import { addEbooks, getAllEbooks, updateEbooks } from '@/helper/api/e-books';
-import { useForm } from 'react-hook-form';
+export default function EBooks() {
 
 
-const Faculty = () => {
-  const {displayNotification} = useNotification();
-  
-  const [isLoading, setIsLoading] = useState(false);
-  const [isModalLoading, setIsModalLoading] = useState(false);
-  const [ebooks, setEbooks] = useState([]);
-  const [modal, setModal] = useState({
-    open: false,
-    isEditable: false,
-    details: null
-  })
-  const form = useForm({
-    reValidateMode: 'onChange',
-    defaultValues: {
-      name: "",
-      category: null,
-      description: null
+  const [data, setData] = useState([
+    { number: 6, bgColor: "primary.main", field: "Total Leads" },
+    { number: 16, bgColor: "secondary.main", field: "Follow-ups" },
+    { number: 18, bgColor: "error.main", field: "Not Connected" },
+    { number: 21, bgColor: "warning.main", field: "Enrolled" },
+  ])
+  const dash = [
+    {
+      sno: "1",
+      important_events: "Hindi-I",
+      date: "BAGEN201",
+      fileUrl: "/ebooks/hindi.pdf",
+      fileUrl: "/syllabus/MUJ_Domestics_MBA-1.pdf",
     },
-  });
-  const { register, handleSubmit, formState, reset, getValues } = form;
-  const { errors } = formState;
-
-  
-  useEffect(() => {
+    {
+      sno: "2",
+      important_events: "Environmental Science",
+      date: "BAGEN202",
+      fileUrl: "/ebooks/hindi.pdf",
+      fileUrl: "/syllabus/MUJ_Domestics_MBA-1.pdf",
+    },
+    {
+      sno: "3",
+      important_events: "Mathematic-I",
+      date: "BAGEN202",
+      fileUrl: "/ebooks/hindi.pdf",
+      fileUrl: "/syllabus/MUJ_Domestics_MBA-1.pdf",
+    },
+    {
+      sno: "4",
+      important_events: "English-II",
+      date: "BAGEN205",
+      fileUrl: "/ebooks/hindi.pdf",
+      fileUrl: "/syllabus/MUJ_Domestics_MBA-1.pdf",
+    },
+    {
+      sno: "5",
+      important_events: "Science-III",
+      date: "BAGEN207",
+      fileUrl: "/syllabus/MUJ_Domestics_MBA-1.pdf",
+    },
     
-    getData();
-  }, []);
-
-  const getData = async (page = 1, pageSize = 10) => {
-    setIsLoading(true)
-    try {
-
-      const data = await getAllEbooks({page, pageSize});
-      setEbooks(data.result)
-     
-    } catch (error) {
-      displayNotification({message: "Unable To Get Ebooks", type: "error"})
-
-    } finally{
-      setIsLoading(false);
-    }
+  ];
+  const handleOpenFile = (fileUrl) => {
+    window.open(fileUrl, "_blank");
   };
-//   async function onSubmit(data) {
-//     setIsModalLoading(true)
-//     try {
-//       let response = await addEbooks(data);
-//       displayNotification({message: `Ebooks ${modal.isEditable ? 'Updated' : 'Added'}`, type: "success"});
-//       handleCloseModal();
-//       getData();
-//     } catch (error) {
-//       displayNotification({message: `Unable to ${modal.isEditable ? 'Update' : 'Add'} Ebooks`, type: "error"});
-//     } finally {
-//       setIsModalLoading(false)
-//     }
- 
-//   }
-
-async function onSubmit(data) {
-    setIsModalLoading(true)
-    try {
-      if (modal.isEditable) {
-        let response = await updateEbooks(modal.details.book_id, data);
-        displayNotification({message: `Ebook Updated`, type: "success"});
-      
-      }else {
-        let response = await addEbooks(data);
-        displayNotification({message: `Ebook Added`, type: "success"});
-      }
-      handleCloseModal();
-      getData();
-    } catch (error) {
-      displayNotification({message: `Unable to ${modal.isEditable ? 'Update' : 'Add'} Ebook`, type: "error"});
-    } finally {
-      setIsModalLoading(false)
-    }
- 
-  }
-
-  function clearForm() {
-    reset({
-      name: "",
-      category: null,
-      description: null
-    })
-  }
-  
-  function handleOpenModal(details) {
-    if (details) {
-        setModal({
-          open: true,
-          isEditable: true,
-          details
-        });
-        
-        reset({
-          name: details.name,
-          category: details.category,
-          description: details.description
-        });
-    }else{
-      setModal({
-        open: true,
-        isEditable: false,
-        details: null
-      });
-    }
-   
-  }
-  function handleCloseModal() {
-    setModal({
-      open: false,
-      isEditable: false,
-      details: null
-    });
-    clearForm()
-  }
 
   return (
-    <>
-      <div className="flex justify-between align-middle  mb-5">
-        <h2 className='text-3xl'>Ebooks ({ebooks.length})</h2>
+    <div className="h-screen">
+   
+     
         
-
-          <Button variant='outlined' color='success' onClick={() => handleOpenModal(null)} >Add +</Button>
+      
+      <div className="py-2">
+      {/* <DashboardFilter/> */}
+        <h3 className="text-2xl mb-5" style={{borderBottom: '1px solid grey'}}>Manage E-Books</h3>
+        <div className=" align-middle  mb-5">
+        {/* <h2 className='text-3xl'>Students Profile ({faculties.length})</h2> */}
+       
+        
       
         
       </div>
 
-      <Card>
+      <div className="container">
+        <div className="text-center">
+        <div className="m-auto">
+        
+        </div>
+        </div>
+
+          
+      <Card style={{ width: '70%', margin: 'auto'}}>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
 
-                <TableCell>
-                  Name
+                <TableCell className="bg-brand-light-blue text-white">
+                  S.No
                 </TableCell>
-                <TableCell>
-                category
+                <TableCell className="bg-brand-light-blue text-white">
+                Subject Name
                 </TableCell>
-            
-                <TableCell>
-                  description
+                <TableCell className="bg-brand-light-blue text-white">
+                Subject Code
                 </TableCell>
-                <TableCell>
-                  Edit
-                </TableCell>
-                <TableCell>
-                  View
+                <TableCell className="bg-brand-light-blue text-white">
+                E-Books
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {ebooks.map((row, index) => (
+              {dash.map((row, index) => (
                 <TableRow
                   sx={{ '& > *': { borderBottom: 'unset' } }}
                   hover
@@ -188,84 +132,35 @@ async function onSubmit(data) {
                 >
 
                   <TableCell>
-                    {row.name}
-                  </TableCell>
-
-                  <TableCell>
-                    {row.category}
-                  </TableCell>
-
-                  <TableCell>
-                    {row.description}
+                    {row.sno}
                   </TableCell>
                   <TableCell>
-                    
-                  <Button onClick={() => handleOpenModal(row)}>Edit</Button>
-                    
+                    {row.important_events} Months
                   </TableCell>
                   <TableCell>
-                    
-                    <Link href={`/ebooks/info/${row.ebook_id}`}><Button >View</Button></Link>
-                    
+                    {row.date} Months
                   </TableCell>
+                  <TableCell>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={() => handleOpenFile(row.fileUrl)}
+                        >
+                          Open E-Book
+                        </Button>
+                      </TableCell>
                 </TableRow>
 
               ))}
             </TableBody>
           </Table>
-       
+        
         </TableContainer>
       </Card>
-      <Modal
-        open={modal.open}
-        onClose={handleCloseModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 500,
-          bgcolor: 'background.paper',
-          borderRadius: 1,
-          boxShadow: 24,
-          p: 4,
-        }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {modal.isEditable ? "Edit" : "Add"} Ebooks
-          </Typography>
-          <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Stack spacing={2} className='my-5'>
-                <TextField label="Name" type='text' {...register("name", { required: "Name is required" })} error={!!errors.name} helperText={errors.name?.message} />
-                <TextField label="Category" type='text' {...register("category", { required: "Category is required" })} error={!!errors.category} helperText={errors.category?.message} />
-                <TextField label="Description" type='text' {...register("description", { required: "Description is required" })} error={!!errors.description} helperText={errors.phone?.message} />
-                
-                  {/* <FormHelperText>{errors?.managerId?.message}</FormHelperText> */}
-                {/* </FormControl> */}
-                {/* <TextField label="manager" type='text' {...register("manager", { required: "manager is required" })} error={!!errors.name}/> */}
-              </Stack>
-              <div>
-                <Button className='me-5' onClick={() => handleCloseModal()}>
-                  Cancel
-                </Button>
-                <Button variant='outlined' color='success' type='submit' disabled={isModalLoading}>
-                  {isModalLoading ? "Saving..." : "Save"}
-                </Button>
-              </div>
-            </form>
+      </div>
+ 
+      </div>
 
-          </div>
-        </Box>
-      </Modal>
-    </>
-  )
+    </div>
+  );
 }
-
-export default Faculty;
-
-
-
-

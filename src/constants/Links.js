@@ -1,4 +1,5 @@
-import { AccountBalance, AddToPhotos, BookSharp, Dashboard, GolfCourse, MenuBook, NewspaperSharp, Person, PersonSearch, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, MenuBook, NewspaperSharp, Person, PersonSearch, VerifiedUser} from '@mui/icons-material';
+import { Card } from '@mui/material';
 
 
 export const adminLinks = [
@@ -51,20 +52,30 @@ export const superAdminLinks = [
         icon: <AddToPhotos/>,
         url: "/elective-course"
     },
+    {
+        label: "Ebooks",
+        icon: <Book/>,
+        url: "/ebooks/list"
+    },
+    {
+        label: "Admit Card",
+        icon: <DescriptionOutlined/>,
+        url: "/admit-card"
+    },
     // 
-    {
-        label: "Students",
-        icon: <PersonSearch/>,
-        url: "/students"
-    },
-    {
-        label: "Courses",
-        icon: <MenuBook/>,
-        url: "/courses"
-    },
-        {
-            label: "Transaction",
-            icon: <AccountBalance/>,
-            url: "/transaction"
-        },
+    // {
+    //     label: "Students",
+    //     icon: <PersonSearch/>,
+    //     url: "/students"
+    // },
+    // {
+    //     label: "Courses",
+    //     icon: <MenuBook/>,
+    //     url: "/courses"
+    // },
+    //     {
+    //         label: "Transaction",
+    //         icon: <AccountBalance/>,
+    //         url: "/transaction"
+    //     },
 ]

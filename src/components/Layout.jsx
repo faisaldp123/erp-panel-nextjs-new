@@ -309,10 +309,12 @@ export default function Layout({children}) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <div className='px-4'>
-        Hi! {Cookies.get("user_name")}
+        {/* Hi! {Cookies.get("user_name")} */}
+        Hi! Mohd Faisal
         </div>
         <div className='px-4 mb-5'>
-        Role: {Cookies.get("role")}
+        {/* Role: {Cookies.get("role")} */}
+        Role: Admin
         </div>
         <MenuItem onClick={handleCloseProfileMenu}>
           <Avatar src='/faisal.jpeg'/> My account

@@ -113,7 +113,7 @@ import {
           <TableContainer>
             <Table>
               <TableHead>
-                <TableRow>
+                <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
   
                   <TableCell className="bg-brand-light-blue text-white" style={{fontWeight: 'bold', padding: '8px', marginLeft:'10px'}}>
                     S.No
