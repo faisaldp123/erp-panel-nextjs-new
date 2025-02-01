@@ -1,4 +1,6 @@
-import { Snackbar, Alert, SnackbarCloseReason } from "@mui/material";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import { SnackbarCloseReason } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 
