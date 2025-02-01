@@ -19,7 +19,7 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import SearchIcon from '@mui/icons-material/Search';
 import { Avatar, InputBase, Menu, MenuItem, Tooltip } from '@mui/material';
-import { LoginOutlined, Logout, PersonAdd, Settings } from '@mui/icons-material';
+import { Dashboard, LoginOutlined, Logout, PersonAdd, Settings } from '@mui/icons-material';
 import { adminLinks, superAdminLinks } from '@/constants/Links';
 import Link from 'next/link';
 import { useDispatch, useSelector } from "react-redux";
@@ -224,6 +224,11 @@ export default function Layout({children}) {
   const handleLogout = () => {
     Cookies.remove("access_token");
     router.push("/login")
+  };
+
+  const handleDashboard = () => {
+    // Cookies.remove("access_token");
+    router.push("/dashboard")
   }
 
   const role = Cookies.get("role");
@@ -320,6 +325,12 @@ export default function Layout({children}) {
           <Avatar src='/faisal.jpeg'/> My account
         </MenuItem>
         <Divider />
+        <MenuItem onClick={handleDashboard}>
+          <ListItemIcon>
+            <Dashboard fontSize="small" />
+          </ListItemIcon>
+          Dashboard
+        </MenuItem>
         
         <MenuItem onClick={handleCloseProfileMenu}>
           <ListItemIcon>
