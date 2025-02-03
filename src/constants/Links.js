@@ -2,7 +2,7 @@ import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, Calen
 import { Card } from '@mui/material';
 
 
-export const superAdminLinks = [
+export const adminLinks = [
     {
         label: "Dashboard",
         icon: <Dashboard/>,
@@ -31,7 +31,7 @@ export const superAdminLinks = [
         // },
 ]
 
-export const adminLinks = [
+export const superAdminLinks = [
     {
         label: "Home",
         icon: <Home/>,
