@@ -1,8 +1,8 @@
-import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, MenuBook, NewspaperSharp, Person, PersonSearch, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, VerifiedUser} from '@mui/icons-material';
 import { Card } from '@mui/material';
 
 
-export const adminLinks = [
+export const superAdminLinks = [
     {
         label: "Dashboard",
         icon: <Dashboard/>,
@@ -24,14 +24,19 @@ export const adminLinks = [
             icon: <PersonSearch/>,
             url: "/profile/list"
         },
-        {
-            label: "Transaction",
-            icon: <AccountBalance/>,
-            url: "/transaction"
-        },
+        // {
+        //     label: "Transaction",
+        //     icon: <AccountBalance/>,
+        //     url: "/transaction"
+        // },
 ]
 
-export const superAdminLinks = [
+export const adminLinks = [
+    {
+        label: "Home",
+        icon: <Home/>,
+        url: "/"
+    },
     {
         label: "Dashboard",
         icon: <Dashboard/>,
@@ -61,6 +66,11 @@ export const superAdminLinks = [
         label: "Admit Card",
         icon: <DescriptionOutlined/>,
         url: "/admit-card"
+    },
+    {
+        label: "Time Table",
+        icon: <CalendarMonth/>,
+        url: "/time-table"
     },
     // 
     // {

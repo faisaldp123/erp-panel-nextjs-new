@@ -26,7 +26,8 @@ import { Notification } from '@/components/shared/notification';
       <Layout>
     <Component {...pageProps} />
   </Layout> 
-  {/* :  <UnauthenticatedLayout>
+  {/* :  
+  <UnauthenticatedLayout>
       <Component {...pageProps} />
     </UnauthenticatedLayout>
   } */}
