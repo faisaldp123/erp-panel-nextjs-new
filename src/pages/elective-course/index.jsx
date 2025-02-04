@@ -109,7 +109,7 @@ import {
         <div className="container">
   
             
-        <Card style={{ width: '70%', margin: 'auto'}}>
+        <Card sx={{ width: {sm:'100%', md: '75%'}, margin: 'auto'}}>
           <TableContainer>
             <Table>
               <TableHead>

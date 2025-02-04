@@ -5,15 +5,15 @@ const TopMain = () => {
   return (
     <div className='container'>
         <h3 style={{ fontSize: '26px', marginBottom: '20px', borderBottom: '3px solid', width:'fit-content'}}>Home</h3>
-        <div className='border rounded'>
+        <div className='border rounded border-dark'>
             <h2 style={{fontSize: '22px', borderBottom: '1px solid', padding: '10px'}}>Home</h2>
-            <div>
-                <h3 style={{fontSize: '22px', borderBottom: '1px solid', padding: '20px'}}>Himanshu singh | Quick Updates</h3>
-                <div style={{display: 'flex', justifyContent: 'space-around', padding: '10px'}}>
+            <div className='border rounded border-dark' style={{margin: '30px', padding: '23px',}}>
+                <h3 style={{fontSize: '22px', borderBottom: '1px solid', padding: '45px 4px'}}>Himanshu singh | Quick Updates</h3>
+                <div className="flex flex-wrap justify-center md:justify-around" style={{display: 'flex', justifyContent: 'space-around', padding: '10px', marginTop: '30px'}}>
                     
-                        <div className='border rounded' style={{padding: '10px 58px'}}>
+                        <div className='border rounded' style={{padding: '30px 28px'}}>
                         <div className="flex">
-                        <div>
+                        <div style={{margin: 'auto', marginRight: '25px'}}>
                             <School/>
                         </div>
                         <div>
@@ -22,9 +22,9 @@ const TopMain = () => {
                         </div>
                         </div>
                     </div>
-                    <div className='border rounded' style={{padding: '10px 58px'}}>
+                    <div className='border rounded' style={{padding: '30px 28px'}}>
                         <div className="flex">
-                        <div>
+                        <div style={{margin: 'auto', marginRight: '25px'}}>
                             <School/>
                         </div>
                         <div>
@@ -33,9 +33,9 @@ const TopMain = () => {
                         </div>
                         </div>
                     </div>
-                    <div className='border rounded' style={{padding: '10px 58px'}}>
+                    <div className='border rounded' style={{padding: '30px 28px'}}>
                         <div className="flex">
-                        <div>
+                        <div style={{margin: 'auto', marginRight: '25px'}}> 
                             <School/>
                         </div>
                         <div>
@@ -44,9 +44,9 @@ const TopMain = () => {
                         </div>
                         </div>
                     </div>
-                    <div className='border rounded' style={{padding: '10px 58px'}}>
+                    <div className='border rounded' style={{padding: '30px 28px'}}>
                         <div className="flex">
-                        <div>
+                        <div style={{margin: 'auto', marginRight: '25px'}}>
                             <School/>
                         </div>
                         <div>

@@ -101,7 +101,13 @@ export default function EBooks() {
         </div>
 
           
-      <Card style={{ width: '70%', margin: 'auto'}}>
+        <Card
+  sx={{
+    width: { xs: '100%', md: '70%' }, // 100% width on small screens, 70% on medium & larger screens
+    margin: 'auto',
+    // padding: 2, // Optional padding
+  }}
+>
         <TableContainer>
           <Table>
             <TableHead>
