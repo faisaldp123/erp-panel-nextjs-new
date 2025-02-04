@@ -149,7 +149,7 @@ import {
         </div>
   
         {/* Student Info Section */}
-        <Card className="border-dark" sx={{ padding: "20px", marginBottom: "20px" }}>
+        <Card className="border-dark mt-4" sx={{ padding: "20px", marginBottom: "20px", marginTop: '10px' }}>
           <Grid container spacing={2}>
             {Object.entries(studentInfo).map(([key, value]) => (
               <Grid item xs={6} sm={4} key={key}>
