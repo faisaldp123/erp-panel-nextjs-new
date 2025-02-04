@@ -1,4 +1,4 @@
-import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, VerifiedUser} from '@mui/icons-material';
 import { Card } from '@mui/material';
 
 
@@ -71,6 +71,11 @@ export const superAdminLinks = [
         label: "Time Table",
         icon: <CalendarMonth/>,
         url: "/time-table"
+    },
+    {
+        label: "Result",
+        icon: <ReceiptLong/>,
+        url: "/result"
     },
     // 
     // {

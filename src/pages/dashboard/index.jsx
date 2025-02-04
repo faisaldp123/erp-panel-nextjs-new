@@ -100,7 +100,7 @@ export default function Dashboard() {
         </div>
 
           
-      <Card style={{ width: '70%', margin: 'auto'}}>
+      <Card sx={{ width:{ xs:'100%', md:'70%'}, margin: 'auto'}}>
         <TableContainer>
           <Table>
             <TableHead>

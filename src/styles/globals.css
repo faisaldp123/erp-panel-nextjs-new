@@ -25,6 +25,9 @@
   .bg-brand{
     background-color: var(--brand);
   }
+  .border-dark{
+    border-top: 4px solid var(--brand);
+  }
   .bg-brand-dual{
     background-color: var(--brand);
     color: white;
@@ -32,3 +35,29 @@
   .bg-ocean{
    background-color: var(--ocean);
   }
+  @media print {
+    /* Hide header, sidebar, and print button */
+    header, .sidebar, .print-button {
+      display: none !important;
+    }
+  
+    /* Adjust body layout to hide gaps */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* Make the content area occupy the full width */
+    .page-content {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  
+    /* Ensure all cards and tables span full width */
+    .page-content .border-dark {
+      width: 100%;
+    }
+  }
+  
+  

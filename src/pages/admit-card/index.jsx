@@ -91,7 +91,7 @@ import {
       
         
       </div>
-        <Card style={{ width: '70%', margin: 'auto'}}>
+        <Card sx={{ width: {sm:'100%' ,md:'70%'}, margin: 'auto'}}>
           <TableContainer>
             <Table>
               <TableBody>
