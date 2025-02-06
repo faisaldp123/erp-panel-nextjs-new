@@ -28,6 +28,9 @@
   .border-dark{
     border-top: 4px solid var(--brand);
   }
+  .border-dark-bottom{
+    border-bottom: 4px solid var(--brand);
+  }
   .bg-brand-dual{
     background-color: var(--brand);
     color: white;
@@ -49,6 +52,8 @@
       position: absolute;
       left: 0;
       top: 0;
+      margin: auto;
+      text-align: center;
     }
   
     /* Optional: Remove print button during print */
