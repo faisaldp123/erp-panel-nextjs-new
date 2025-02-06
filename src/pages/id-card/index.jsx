@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, Avatar, Grid, Box, Button } from "@mui/m
 
 const dash = [
   {
-    enrollment_no: "04-07-1997",
+    enrollment_no: "AR2412390114123",
     student_name: "Mr. JAI SINGH GURJAR",
     fathers_name: "HARDAN GURJAR",
     mother_name: "BHAGWATI DEVI",
@@ -66,7 +66,7 @@ const StudentIDCard = () => {
               alt="Student Photo"
               style={{ width: 100, height: 100, margin: "auto" }}
             />
-            <Typography variant="subtitle1" color="textSecondary" mt={1}>
+            <Typography style={{width: 'fit-content', textAlign: 'center', margin: 'auto'}} className="border-dark-bottom" variant="subtitle1" color="textSecondary" mt={1}>
               {student.student_name}
             </Typography>
           </Grid>
