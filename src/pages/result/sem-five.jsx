@@ -123,6 +123,7 @@ import {
     return (
       <div style={{ padding: "20px" }}>
         {/* Header Section */}
+        <div className="card-to-print">
         <div style={{ textAlign: "center", marginBottom: "20px", margin: 'auto' }}>
           <div style={{display: 'flex', justifyContent:'space-between'}}>
           <div>
@@ -133,9 +134,7 @@ import {
             height={100}
           />
           </div>
-          <div>
-          <Button variant="contained" onClick={() => window.print()}>Print Result</Button>
-          </div>
+          
           </div>
           <Typography variant="h3" gutterBottom>
             Admission Panel
@@ -217,7 +216,12 @@ import {
           2. Students must apply for revaluation, re-totaling within 20 days from
           the announcement of results.
         </Typography>
+        </div>
+        <div className="text-center mt-5">
+          <Button variant="contained" className="print-button" onClick={() => window.print()}>Print Result</Button>
+          </div>
       </div>
+      
     );
   }
   

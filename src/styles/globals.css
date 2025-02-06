@@ -36,28 +36,26 @@
    background-color: var(--ocean);
   }
   @media print {
-    /* Hide header, sidebar, and print button */
-    header, .sidebar, .print-button {
-      display: none !important;
+    /* Hide everything except the card */
+    body * {
+      visibility: hidden;
     }
   
-    /* Adjust body layout to hide gaps */
-    body {
-      margin: 0;
-      padding: 0;
+    .card-to-print, .card-to-print * {
+      visibility: visible;
     }
   
-    /* Make the content area occupy the full width */
-    .page-content {
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
+    .card-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
     }
   
-    /* Ensure all cards and tables span full width */
-    .page-content .border-dark {
-      width: 100%;
+    /* Optional: Remove print button during print */
+    .print-button {
+      display: none;
     }
   }
+  
   
   
