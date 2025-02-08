@@ -1,158 +1,204 @@
 import {
-
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
   Card,
-  Grid,
-  CardContent,
-  Stack,
-  Autocomplete,
   TableContainer,
   Table,
   TableHead,
   TableRow,
   TableCell,
   TableBody,
-  Button
-
+  Typography,
+  Grid,
+  Avatar,
+  Button,
 } from "@mui/material";
-import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+export default function AdmitCard() {
+  const studentInfo = {
+    enrollmentNo: "AR2412390114372",
+    rollNo: "A0624R011437",
+    name: "Himanshu Singh",
+    fatherName: "Shiv Kumar Singh",
+    course: "Master Of Business Administration (Human Resource Management & Financial Management)",
+    year: "1",
+    examinationCenter: "DDE, SVSU",
+  };
 
-
-export default function Result() {
-
-
-  const [data, setData] = useState([
-    { number: 6, bgColor: "primary.main", field: "Total Leads" },
-    { number: 16, bgColor: "secondary.main", field: "Follow-ups" },
-    { number: 18, bgColor: "error.main", field: "Not Connected" },
-    { number: 21, bgColor: "warning.main", field: "Enrolled" },
-  ])
-  const dash = [
+  const examDetails = [
     {
-      exam_name: "FIRST SEMESTER EXAM",
-      session: "JAN-JUNE'2020",
-      semester: "Semester 1",
-      view_result: "/admit-card/semester-one"
+      paperCode: "MBA-101",
+      subject: "Principles and Practices of Management",
+      semester: 1,
+      date: "23-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
     {
-      exam_name: "SECOND SEMESTER EXAM",
-      session: "JULY-DEC'2020",
-      semester: "Semester 2",
-      view_result: "/admit-card/semester-two"
+      paperCode: "MBA-102",
+      subject: "Managerial Economics",
+      semester: 1,
+      date: "24-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
     {
-      exam_name: "THIRD SEMESTER EXAM",
-      session: "JAN-JUNE'2021",
-      semester: "Semester 3",
-      view_result: "/admit-card/semester-three"
+      paperCode: "MBA-103",
+      subject: "Accounting for Managers",
+      semester: 1,
+      date: "25-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
     {
-      exam_name: "FOURTH SEMESTER EXAM",
-      session: "JULY-DEC'2021",
-      semester: "Semester 4",
-      view_result: "/admit-card/semester-four"
+      paperCode: "MBA-104",
+      subject: "Organizational Behavior",
+      semester: 1,
+      date: "27-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
     {
-      exam_name: "FIFTH SEMESTER EXAM",
-      session: "JAN-JUNE'2022",
-      semester: "Semester 5",
-      view_result: "/admit-card/semester-five"
+      paperCode: "MBA-105",
+      subject: "Business Statistics",
+      semester: 1,
+      date: "28-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
     {
-      exam_name: "SIXTH SEMESTER EXAM",
-      session: "JULY-DEC'2022",
-      semester: "Semester 6",
-      view_result: "/admit-card/semester-six"
-
+      paperCode: "MBA-106",
+      subject: "Information Systems for Management",
+      semester: 1,
+      date: "29-01-2025",
+      time: "09:00 AM - 12:00 PM",
     },
-    
+    {
+      paperCode: "MBA-107",
+      subject: "Communication for Management",
+      semester: 1,
+      date: "30-01-2025",
+      time: "09:00 AM - 12:00 PM",
+    },
   ];
 
   return (
-    <div className="h-screen">
-   
-     
-        
-      
-      <div className="py-2">
-      {/* <DashboardFilter/> */}
-        <h3 className="text-2xl mb-5" style={{borderBottom: '2px solid', paddingBottom: '10px'}}>Admit Card</h3>
-        <div className=" align-middle  mb-5">
-        {/* <h2 className='text-3xl'>Students Profile ({faculties.length})</h2> */}
-       
-        
-      
-        
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      {/* Header */}
+      <div className="text-end mb-5">
+              <Button variant="contained" className="print-button" onClick={() => window.print()}>Download Admit Card</Button>
+              </div>
+      <div className="card-to-print">
+      <div style={{ textAlign: "center", borderBottom: "20px" }}>
+        <Typography
+          variant="h5"
+          gutterBottom
+          style={{ color: "#fff", backgroundColor: "#2b3990", padding: "10px" }}
+        >
+          DIRECTORATE OF DISTANCE EDUCATION <br />
+          SWAMI VIVEKANAND SUBHARTI UNIVERSITY
+        </Typography>
+        <Grid container spacing={2} justifyContent="center" alignItems="center">
+          <Grid item>
+            <Typography variant="body2">
+              Enrollment No.: {studentInfo.enrollmentNo}
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body2">
+              Roll No.: {studentInfo.rollNo}
+            </Typography>
+          </Grid>
+        </Grid>
       </div>
 
-      <div className="container">
+      {/* Candidate Info */}
+      <Card sx={{ padding: "20px", borderBottom: "1px solid" }}>
+<Grid container spacing={2} alignItems="center">
+  {/* Student Info Section */}
+  <Grid item xs={8}>
+    <Grid container spacing={2}>
+      {Object.entries(studentInfo)
+        .filter(([key]) => key !== "enrollmentNo" && key !== "rollNo")
+        .map(([key, value]) => (
+          <Grid item xs={6} key={key}>
+            <Typography>
+              <strong>{key.replace(/([A-Z])/g, " $1")}: </strong> {value}
+            </Typography>
+          </Grid>
+        ))}
+    </Grid>
+  </Grid>
 
-          
-      <Card sx={{ width:{ xs:'100%', md:'70%'}, margin: 'auto', marginTop: '40px'}}>
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow>
+  {/* Photo Section */}
+  <Grid item xs={4} sx={{ textAlign: "center" }}>
+    <Typography variant="body1" gutterBottom>
+      <strong>Candidate Photo</strong>
+    </Typography>
+    <div
+      style={{
+        width: "150px",
+        height: "122px",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        overflow: "hidden",
+        margin: "0 auto",
+        paddingBottom: "0px",
+        paddingTop: '9px'
+      }}
+    >
+      <Avatar
+                  src="/id-card/himanshus.png"
+                  alt="Student Photo"
+                  style={{ width: 100, height: 100, margin: "auto" }}
+                />
+    </div>
+  </Grid>
+</Grid>
+</Card>
 
-                {/* <TableCell className="bg-brand-light-blue text-white">
-                  Exam Name
-                </TableCell> */}
-                <TableCell className="bg-brand-light-blue text-white">
-                Session
-                </TableCell>
-                <TableCell className="bg-brand-light-blue text-white">
-                Semester
-                </TableCell>
-                <TableCell className="bg-brand-light-blue text-white">
-                Admit Card
-                </TableCell>
+
+      {/* Exam Details */}
+      <TableContainer component={Card}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>
+                <strong>S.No</strong>
+              </TableCell>
+              <TableCell>
+                <strong>Paper Code</strong>
+              </TableCell>
+              <TableCell>
+                <strong>Subjects</strong>
+              </TableCell>
+              <TableCell>
+                <strong>Semester</strong>
+              </TableCell>
+              <TableCell>
+                <strong>Date</strong>
+              </TableCell>
+              <TableCell>
+                <strong>Time</strong>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {examDetails.map((detail, index) => (
+              <TableRow key={index}>
+                <TableCell>{index + 1}</TableCell>
+                <TableCell>{detail.paperCode}</TableCell>
+                <TableCell>{detail.subject}</TableCell>
+                <TableCell>{detail.semester}</TableCell>
+                <TableCell>{detail.date}</TableCell>
+                <TableCell>{detail.time}</TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>
-              {dash.map((row, index) => (
-                <TableRow
-                  sx={{ '& > *': { borderBottom: 'unset' } }}
-                  hover
-
-                  tabIndex={-1}
-                  key={row.id}
-                >
-
-                  <TableCell>
-                    {row.session}
-                  </TableCell>
-                  <TableCell>
-                    {row.semester}
-                  </TableCell>
-                  <TableCell>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        href={row.view_result}
-                      >
-                        Download
-                      </Button>
-                    </TableCell>
-                </TableRow>
-
-              ))}
-            </TableBody>
-          </Table>
-        
-        </TableContainer>
-      </Card>
+            ))}
+          </TableBody>
+        </Table>
+        <div style={{textAlign: 'center', paddingTop: '30px', paddingBottom: '30px'}}>
+        <Typography variant="body6" gutterBottom>
+        Disclaimer : This document is computer generated and does not require any signature or stamp in order to be considered valid. <br />
+        * mark represents back subject examination.
+    </Typography>
+        </div>
+      </TableContainer>
       </div>
- 
-      </div>
-
+      
     </div>
   );
 }
