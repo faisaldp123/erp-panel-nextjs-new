@@ -253,7 +253,7 @@ export default function Layout({children}) {
           </IconButton>
          <div className="flex justify-end sm:justify-between w-full">
           <span className='bg-white rounded'>
-          <img src="/admission-logo-new.webp" alt="" className='w-100 h-auto hidden sm:inline'/>
+          <img src="/admission-logo-new.webp" alt="admission panel" href='/' className='w-100 h-auto hidden sm:inline'/>
           </span>
          <Search className='hidden sm:inline'>
             <SearchIconWrapper>
