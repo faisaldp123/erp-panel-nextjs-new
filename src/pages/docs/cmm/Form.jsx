@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Dialog,
   DialogTitle,
@@ -11,6 +11,17 @@ import {
 } from "@mui/material";
 
 const Form = ({ open, handleClose }) => {
+  const aadharInputRef = useRef(null);
+  const photoInputRef = useRef(null);
+  const documentInputRef = useRef(null);
+
+  const handleFileSelect = (event, fieldName) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log(`${fieldName} Selected:`, file.name);
+    }
+  };
+
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
       <DialogTitle sx={{ fontWeight: "bold" }}>Apply CMM</DialogTitle>
@@ -48,21 +59,44 @@ const Form = ({ open, handleClose }) => {
           <Grid item xs={12}>
             <Typography variant="h6" sx={{ fontWeight: "bold", marginTop: 2 }}>Upload Documents</Typography>
           </Grid>
+
           {["Aadhar Upload", "Photograph Upload"].map((label, index) => (
             <Grid item xs={4} key={index}>
               <Typography>{label}*</Typography>
-              <Button variant="contained" sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "100%" }}>
+              <input
+                type="file"
+                ref={index === 0 ? aadharInputRef : photoInputRef}
+                style={{ display: "none" }}
+                onChange={(e) => handleFileSelect(e, label)}
+              />
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "100%" }}
+                onClick={() => (index === 0 ? aadharInputRef.current : photoInputRef.current).click()}
+              >
                 Upload
               </Button>
             </Grid>
           ))}
+
           <Grid item xs={12}>
             <Typography variant="h6" sx={{ marginTop: 2, fontSize: '10px' }}>
               Supportive Document* (Upload both semester's online result merged PDF of above selected year)
             </Typography>
           </Grid>
+          
           <Grid item xs={4}>
-            <Button variant="contained" sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "100%" }}>
+            <input
+              type="file"
+              ref={documentInputRef}
+              style={{ display: "none" }}
+              onChange={(e) => handleFileSelect(e, "Supportive Document")}
+            />
+            <Button
+              variant="contained"
+              sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "100%" }}
+              onClick={() => documentInputRef.current.click()}
+            >
               Upload
             </Button>
           </Grid>
