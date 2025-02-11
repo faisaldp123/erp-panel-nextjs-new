@@ -1,4 +1,4 @@
-import { AccountBalance, AddToPhotos, Airplay, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Airplay, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, DockSharp, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, Source, VerifiedUser} from '@mui/icons-material';
 import { Card } from '@mui/material';
 
 
@@ -46,6 +46,11 @@ export const superAdminLinks = [
         label: "LMS",
         icon: <Airplay/>,
         url: "/lms"
+    },
+    {
+        label: "Docs",
+        icon: <Source/>,
+        url: "/docs"
     },
     {
         label: "Profile",
