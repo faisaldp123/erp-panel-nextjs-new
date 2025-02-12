@@ -13,6 +13,7 @@
     --light-gray: #E1E1E1;
     --sky-blue: #369abe;
     --lights-blue: #4f89db;
+    --grey-text: #6e7e96;
     
   }
 
@@ -37,6 +38,9 @@
   }
   .bg-ocean{
    background-color: var(--ocean);
+  }
+  .text-grey{
+    color: var(--grey-text);
   }
   @media print {
     /* Hide everything except the card */
