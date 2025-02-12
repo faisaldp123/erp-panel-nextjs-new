@@ -1,0 +1,15 @@
+.add_btn{
+    background: white;
+    color: #157ae1;
+    padding: 14px 20px;
+    border-radius: 5px;
+    border: 1px solid #157ae1;
+
+}
+.delete_btn{
+    background: white;
+    color: red;
+    padding: 14px 20px;
+    border-radius: 5px;
+    border: 1px solid red;
+}
