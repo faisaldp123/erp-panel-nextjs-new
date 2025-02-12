@@ -61,7 +61,7 @@ const { fields, append, remove } = useFieldArray({
       case 0:
         return (
             <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Application No."
                 name="applicationno"
@@ -71,7 +71,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Admission Session"
                 name="admissionsession"
@@ -81,7 +81,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Application Type."
                 name="applicationtype"
@@ -91,7 +91,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Year"
                 name="year"
@@ -101,7 +101,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Full Name"
                 name="fullname"
@@ -111,7 +111,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Email Id"
                 name="emailid"
@@ -121,7 +121,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Contact Number"
                 name="contactnumber"
@@ -131,7 +131,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Father's Name"
                 name="fathersname"
@@ -141,7 +141,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Mother's Name"
                 name="mothersname"
@@ -151,7 +151,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Date of Birth"
                 name="dateofbirth"
@@ -161,7 +161,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Gender"
                 name="gender"
@@ -171,7 +171,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Aadhar No."
                 name="aadharno"
@@ -181,7 +181,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Typography className="text-grey mb-2">Upload Your Photograph</Typography>
               <Button
                             variant="contained"
@@ -198,7 +198,7 @@ const { fields, append, remove } = useFieldArray({
                             View
                           </Button>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
             <Typography className="text-grey mb-2">Upload Your Aadhar Photo</Typography>
               <Button
                             variant="contained"
@@ -230,7 +230,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="State"
                 name="state"
@@ -240,7 +240,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="City / Town"
                 name="citytown"
@@ -250,7 +250,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Pin Code"
                 name="pincode"
@@ -260,7 +260,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Area"
                 name="area"
@@ -270,7 +270,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Nationality"
                 name="nationality"
@@ -280,7 +280,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Category"
                 name="category"
@@ -290,7 +290,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Empleyment Status"
                 name="employementstatus"
@@ -305,7 +305,7 @@ const { fields, append, remove } = useFieldArray({
       case 2:
         return (
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
   {/* Left side with Typography */}
   <Typography sx={{ marginBottom: "5px" }}>Details of Educational Qualifications - 10th Academic Details</Typography>
   <TextField
@@ -318,7 +318,7 @@ const { fields, append, remove } = useFieldArray({
   />
 </Grid>
 
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
   {/* Right side without Typography but with paddingTop to align */}
   <TextField
   label="Subjects"
@@ -330,7 +330,7 @@ const { fields, append, remove } = useFieldArray({
     sx={{ marginTop: "27px" }} // Adjust as needed
   />
 </Grid>
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
               <TextField
                 label="Year of Passing"
                 name="yearofpassing"
@@ -340,7 +340,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Division / Grade"
                 name="division/grade"
@@ -371,7 +371,7 @@ const { fields, append, remove } = useFieldArray({
 
 
 
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
   {/* Left side with Typography */}
   <Typography sx={{ marginBottom: "5px" }}>Details of Educational Qualifications - 12th Academic Details</Typography>
   <TextField
@@ -384,7 +384,7 @@ const { fields, append, remove } = useFieldArray({
   />
 </Grid>
 
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
   {/* Right side without Typography but with paddingTop to align */}
   <TextField
   label="Subjects"
@@ -396,7 +396,7 @@ const { fields, append, remove } = useFieldArray({
     sx={{ marginTop: "27px" }} // Adjust as needed
   />
 </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Year of Passing"
                 name="yearofpassing"
@@ -406,7 +406,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Division / Grade"
                 name="division/grade"
@@ -495,7 +495,7 @@ const { fields, append, remove } = useFieldArray({
       case 3:
         return (
             <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
   {/* Left side with Typography */}
   <Typography sx={{ marginBottom: "5px" }}>More Qualification - Graduation</Typography>
   <TextField
@@ -508,7 +508,7 @@ const { fields, append, remove } = useFieldArray({
   />
 </Grid>
 
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
   {/* Right side without Typography but with paddingTop to align */}
   <TextField
   label="Course"
@@ -520,7 +520,7 @@ const { fields, append, remove } = useFieldArray({
     sx={{ marginTop: "27px" }} // Adjust as needed
   />
 </Grid>
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
               <TextField
                 label="Year of Passing"
                 name="yearofpassing"
@@ -530,7 +530,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Division / Grade"
                 name="division/grade"
@@ -561,7 +561,7 @@ const { fields, append, remove } = useFieldArray({
 
 
 
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
   {/* Left side with Typography */}
   <Typography sx={{ marginBottom: "5px" }}>More Qualification - Post Graduation</Typography>
   <TextField
@@ -574,7 +574,7 @@ const { fields, append, remove } = useFieldArray({
   />
 </Grid>
 
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
   {/* Right side without Typography but with paddingTop to align */}
   <TextField
   label="Course"
@@ -586,7 +586,7 @@ const { fields, append, remove } = useFieldArray({
     sx={{ marginTop: "27px" }} // Adjust as needed
   />
 </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Year of Passing"
                 name="yearofpassing"
@@ -596,7 +596,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Division / Grade"
                 name="division/grade"
@@ -618,7 +618,7 @@ const { fields, append, remove } = useFieldArray({
                           </Button>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
   {/* Left side with Typography */}
   <Typography sx={{ marginBottom: "5px" }}>More Qualification - Other Qualification</Typography>
   <TextField
@@ -631,7 +631,7 @@ const { fields, append, remove } = useFieldArray({
   />
 </Grid>
 
-<Grid item xs={6}>
+<Grid item xs={12} md={6}>
   {/* Right side without Typography but with paddingTop to align */}
   <TextField
   label="Course"
@@ -643,7 +643,7 @@ const { fields, append, remove } = useFieldArray({
     sx={{ marginTop: "27px" }} // Adjust as needed
   />
 </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Year of Passing"
                 name="yearofpassing"
@@ -653,7 +653,7 @@ const { fields, append, remove } = useFieldArray({
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Division / Grade"
                 name="division/grade"
