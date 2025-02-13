@@ -437,7 +437,7 @@ const { fields, append, remove } = useFieldArray({
             {fields.map((val, i) => (
 
 <>
-  <Grid item md={3}>
+  <Grid item xs={6} md={3}>
     <TextField
       fullWidth
       className="me-2 mb-2"
@@ -448,7 +448,7 @@ const { fields, append, remove } = useFieldArray({
       {...register(`sessions.${i}.session`, { required: "Session is required" })}
     />
   </Grid>
-  <Grid item md={3}>
+  <Grid item xs={6} md={3}>
 
 
     <TextField
@@ -461,7 +461,7 @@ const { fields, append, remove } = useFieldArray({
     />
   </Grid>
 
-  <Grid item md={3}>
+  <Grid item xs={8} md={3}>
     <TextField
       defaultValue={getValues().sessions[i].fee_type}
       select
@@ -477,14 +477,14 @@ const { fields, append, remove } = useFieldArray({
       <MenuItem value={"registration"}>Registration fee</MenuItem>
     </TextField>
   </Grid>
-  <Grid item md={3}>
+  <Grid item xs={4} md={3}>
     <button className={`${styles.delete_btn} ms-3`} onClick={() => remove(i)} type="button">
       Delete
     </button>
   </Grid>
 </>
 ))}
-<Grid item md={2}>
+<Grid item xs={6} md={2}>
 <button className={`${styles.add_btn} me-3 mb-2`} onClick={() => append({ session: "", fee: "" })} type="button">
   Add
 </button>
@@ -783,7 +783,7 @@ const { fields, append, remove } = useFieldArray({
           onClick={handleBack}
           sx={{ backgroundColor: "#F44336", color: "#fff" }}
         >
-          Back
+          Previous
         </Button>
         {activeStep === steps.length - 1 ? (
           <Button variant="contained" sx={{ backgroundColor: "#6C27F7", color: "#fff" }}>
