@@ -24,7 +24,7 @@ const materials = [
   {
     title: "Original Degree",
     icon: <BookIcon style={{ color: "#fff" }} />,
-    docs_result: '/docs/original-degree'
+    docs_result: '/docs/original-degree/list'
   },
   {
     title: "Provisional",
