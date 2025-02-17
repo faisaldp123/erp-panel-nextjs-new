@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from '../../styles/application-form/application.module.css';
 import {
   Stepper,
@@ -17,6 +17,28 @@ import { useForm } from 'react-hook-form';
 const steps = ["Personal Info", "Address", "Academic Details", "More Qualification", "Course Details"];
 
 const MultiStepForm = () => {
+  const [files, setFiles] = useState({}); // Store multiple files
+  const inputRefs = {
+    photo: useRef(null),
+    aadhar: useRef(null),
+    tenCertificate: useRef(null),
+    twelveCertificate: useRef(null),
+    graduation: useRef(null),
+    postGraduation: useRef(null),
+    otherQualification: useRef(null),
+  };
+
+  const handleFileUpload = (event, type) => {
+    const uploadedFile = event.target.files[0];
+    if (uploadedFile) {
+      setFiles((prevFiles) => ({
+        ...prevFiles,
+        [type]: URL.createObjectURL(uploadedFile), // Store file URL
+      }));
+    }
+  };
+
+
   const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
@@ -182,38 +204,57 @@ const { fields, append, remove } = useFieldArray({
               />
             </Grid>
             <Grid item xs={12} md={6}>
-                <Typography className="text-grey mb-2">Upload Your Photograph</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
-                          <Button
-                            variant="text"
-                            sx={{ width: "5%" }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            View
-                          </Button>
-            </Grid>
+      <Typography className="text-grey mb-2">Upload Your Photograph</Typography>
+      
+      {/* Hidden file input */}
+      <input
+          type="file"
+          ref={inputRefs.photo}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "photo")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.photo.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.photo && window.open(files.photo, "_blank")}
+          disabled={!files.photo}
+        >
+          View
+        </Button>
+    </Grid>
+
             <Grid item xs={12} md={6}>
             <Typography className="text-grey mb-2">Upload Your Aadhar Photo</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button> 
-                          <Button
-                            variant="text"
-                            sx={{ width: "5%" }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            View
-                          </Button> 
+            <input
+          type="file"
+          ref={inputRefs.aadhar}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "aadhar")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.aadhar.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.aadhar && window.open(files.aadhar, "_blank")}
+          disabled={!files.aadhar}
+        >
+          View
+        </Button> 
             </Grid>
           </Grid>
         );
@@ -353,20 +394,28 @@ const { fields, append, remove } = useFieldArray({
 
             <Grid item xs={12}>
                 <Typography className="text-grey mb-2">Upload Your 10th Certificate</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
-                          <Button
-                            variant="text"
-                            sx={{ width: "5%" }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            View
-                          </Button>
+                <input
+          type="file"
+          ref={inputRefs.tenCertificate}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "tenCertificate")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.tenCertificate.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.tenCertificate && window.open(files.tenCertificate, "_blank")}
+          disabled={!files.tenCertificate}
+        >
+          View
+        </Button>
             </Grid>
 
 
@@ -419,20 +468,28 @@ const { fields, append, remove } = useFieldArray({
 
             <Grid item xs={12}>
                 <Typography className="text-grey mb-2">Upload Your 12th Certificate</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
-                          <Button
-                            variant="text"
-                            sx={{ width: "5%" }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            View
-                          </Button>
+                <input
+          type="file"
+          ref={inputRefs.twelveCertificate}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "twelveCertificate")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.twelveCertificate.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.twelveCertificate && window.open(files.twelveCertificate, "_blank")}
+          disabled={!files.twelveCertificate}
+        >
+          View
+        </Button>
             </Grid>
             {fields.map((val, i) => (
 
@@ -543,20 +600,28 @@ const { fields, append, remove } = useFieldArray({
 
             <Grid item xs={12}>
                 <Typography className="text-grey mb-2">Upload Your Graduation Certificate</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
-                          <Button
-                            variant="text"
-                            sx={{ width: "5%" }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            View
-                          </Button>
+                <input
+          type="file"
+          ref={inputRefs.graduation}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "graduation")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.graduation.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.graduation && window.open(files.graduation, "_blank")}
+          disabled={!files.graduation}
+        >
+          View
+        </Button>
             </Grid>
 
 
@@ -609,13 +674,28 @@ const { fields, append, remove } = useFieldArray({
 
             <Grid item xs={12}>
                 <Typography className="text-grey mb-2">Upload Your Post Graduation Certificate</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
+                <input
+          type="file"
+          ref={inputRefs.postGraduation}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "postGraduation")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.postGraduation.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.postGraduation && window.open(files.postGraduation, "_blank")}
+          disabled={!files.postGraduation}
+        >
+          View
+        </Button>
             </Grid>
 
             <Grid item xs={12} md={6}>
@@ -666,13 +746,28 @@ const { fields, append, remove } = useFieldArray({
 
             <Grid item xs={12}>
                 <Typography className="text-grey mb-2">Upload Your Other Qualification Certificate</Typography>
-              <Button
-                            variant="contained"
-                            sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight:'10px' }}
-                            onClick={() => documentInputRef.current.click()}
-                          >
-                            Upload
-                          </Button>
+                <input
+          type="file"
+          ref={inputRefs.otherQualification}
+          style={{ display: "none" }}
+          onChange={(e) => handleFileUpload(e, "otherQualification")}
+          accept="image/*"
+        />
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: "#6C27F7", color: "#fff", width: "15%", marginRight: "10px" }}
+          onClick={() => inputRefs.otherQualification.current.click()}
+        >
+          Upload
+        </Button>
+        <Button
+          variant="text"
+          sx={{ width: "5%" }}
+          onClick={() => files.otherQualification && window.open(files.otherQualification, "_blank")}
+          disabled={!files.otherQualification}
+        >
+          View
+        </Button>
             </Grid>
             
 
