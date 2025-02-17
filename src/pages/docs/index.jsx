@@ -29,17 +29,17 @@ const materials = [
   {
     title: "Provisional",
     icon: <BookIcon style={{ color: "#fff" }} />,
-    docs_result: '/docs/provisional'
+    docs_result: '/docs/provisional/list'
   },
   {
     title: "E-Marksheet",
     icon: <BookIcon style={{ color: "#fff" }} />,
-    docs_result: '/docs/e-marksheet'
+    docs_result: '/docs/e-marksheet/list'
   },
   {
     title: "Consignment",
     icon: <BookIcon style={{ color: "#fff" }} />,
-    docs_result: '/docs/consignment'
+    docs_result: '/docs/consignment/list'
   },
 ];
 

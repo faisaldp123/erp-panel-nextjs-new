@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -11,8 +11,18 @@ import {
   Button,
   Box,
 } from "@mui/material";
+import Form from "./Form";
 
 const MarksheetTable = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  }
   // Sample data (empty array to show "No data" message)
   const marksheetData = [];
 
@@ -29,7 +39,7 @@ const MarksheetTable = () => {
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
           Provisional
           </Typography>
-          <Button variant="contained" color="secondary" sx={{ backgroundColor: "#6C27F7" }}>
+          <Button variant="contained" color="secondary" sx={{ backgroundColor: "#6C27F7" }} onClick={handleOpen}>
             Apply
           </Button>
         </Box>
@@ -92,6 +102,7 @@ const MarksheetTable = () => {
           </Table>
         </TableContainer>
       </Paper>
+      <Form open={open} handleClose={handleClose} />
     </Box>
   );
 };
