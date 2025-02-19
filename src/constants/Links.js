@@ -1,4 +1,4 @@
-import { AccountBalance, AddToPhotos, Airplay, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, DockSharp, GolfCourse, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, Source, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Airplay, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, DockSharp, GolfCourse, HeadsetMic, HeadsetMicOutlined, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, Source, VerifiedUser} from '@mui/icons-material';
 import { Card } from '@mui/material';
 
 
@@ -51,6 +51,11 @@ export const superAdminLinks = [
         label: "Docs",
         icon: <Source/>,
         url: "/docs"
+    },
+    {
+        label: "Support",
+        icon: <HeadsetMicOutlined/>,
+        url: "/support/list"
     },
     {
         label: "Profile",
