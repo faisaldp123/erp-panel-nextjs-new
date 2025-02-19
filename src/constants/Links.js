@@ -55,7 +55,7 @@ export const superAdminLinks = [
     {
         label: "Support",
         icon: <HeadsetMicOutlined/>,
-        url: "/support/list"
+        url: "/support"
     },
     {
         label: "Profile",
