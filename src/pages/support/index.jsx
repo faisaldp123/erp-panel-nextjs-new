@@ -1,35 +1,25 @@
 "use client";
 import { useState } from "react";
 import { Box, Grid, Typography, Button, Card, CardContent } from "@mui/material";
-import DescriptionIcon from "@mui/icons-material/Description";
-import AssignmentIcon from "@mui/icons-material/Assignment";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import CancelIcon from "@mui/icons-material/Cancel";
 
 const Support = () => {
-  const [semester, setSemester] = useState("1 Semester");
-
-  // Sample Data
-  const materials = [
-    { id: 1, semester: "Semester 1", title: "Communication for Management" },
-    { id: 2, semester: "Semester 1", title: "Information Systems for Management" },
-    { id: 3, semester: "Semester 1", title: "Business Statistics" },
-  ];
 
   return (
     <Box sx={{ p: 3 }}>
       {/* Page Header */}
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 3, color: "#6C27F7" }}>
-        Home
+        Support - Home
       </Typography>
 
       
       <Box sx={{boxShadow: 1, borderRadius: 3, padding: 3, borderTop: "4px solid #003e96"}}>
         {/* Support Home Section */}
       <Card sx={{ p: 2, mb: 3, borderRadius: 3, boxShadow: 1 }}>
-        <Typography variant="body1" fontWeight="bold">
+        <Typography variant="h6" fontWeight="bold">
           Support - Home
         </Typography>
       </Card>
@@ -43,7 +33,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Admission Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/admission-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
