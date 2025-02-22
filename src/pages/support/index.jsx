@@ -82,7 +82,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Re-Registration Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/re-registration-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -131,7 +131,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Examination Tickets Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/examination-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -180,7 +180,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Marksheet Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/marksheet-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -229,7 +229,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Transcript Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/transcript-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -278,7 +278,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Revaluation Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/revaluation-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -327,7 +327,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Migration Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/migration-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -376,7 +376,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Original Degree Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/original-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -424,7 +424,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 E-Learning Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/elearning-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
@@ -474,7 +474,7 @@ const Support = () => {
           <Typography variant="h6" fontWeight="bold">
             📄 Other Ticket Report
           </Typography>
-          <Button variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
+          <Button href="/support/other-tickets" variant="contained" size="small" sx={{ backgroundColor: "#8A2BE2" }}>
             View All
           </Button>
         </Box>
