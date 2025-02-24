@@ -18,8 +18,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, InputBase, Menu, MenuItem, Tooltip } from '@mui/material';
-import { Dashboard, LoginOutlined, Logout, PersonAdd, Settings } from '@mui/icons-material';
+import { Avatar, Badge, InputBase, Menu, MenuItem, Tooltip } from '@mui/material';
+import { Dashboard, LoginOutlined, Logout, NotificationAddRounded, NotificationsNone, PersonAdd, Settings } from '@mui/icons-material';
 import { adminLinks, superAdminLinks } from '@/constants/Links';
 import Link from 'next/link';
 import { useDispatch, useSelector } from "react-redux";
@@ -230,6 +230,10 @@ export default function Layout({children}) {
     // Cookies.remove("access_token");
     router.push("/dashboard")
   }
+  const handleNotification = () => {
+    // Cookies.remove("access_token");
+    router.push("/notification")
+  }
 
   const role = Cookies.get("role");
 
@@ -270,6 +274,9 @@ export default function Layout({children}) {
         control={<MaterialUISwitch checked={mode === "dark" ? true : false} onChange={() => dispatch(toggleDarkMode())} />}
         label=""
       />
+     <Badge title="Notification" onClick={handleNotification} style={{cursor: 'pointer'}} href color="secondary" badgeContent={99}>
+  <NotificationsNone/>
+</Badge>
       <Tooltip title="Account settings">
           <IconButton
             onClick={handleProfileClick}
