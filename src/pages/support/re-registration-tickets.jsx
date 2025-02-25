@@ -16,7 +16,7 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
-import AddTicketModal from "../../components/support/AdmissionTickets"; // Import the modal
+import AddTicketModal from "../../components/support/ReRegistrationTickets"; // Import the modal
 
 const tickets = [
   {
