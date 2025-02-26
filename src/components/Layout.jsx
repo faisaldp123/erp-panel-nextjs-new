@@ -230,10 +230,21 @@ export default function Layout({children}) {
     // Cookies.remove("access_token");
     router.push("/dashboard")
   }
-  const handleNotification = () => {
-    // Cookies.remove("access_token");
-    router.push("/notification")
-  }
+  const [notifications, setNotifications] = React.useState([
+    { id: 1, title: "Welcome to Subharti University", date: "2024-06-20 15:47:27" },
+    { id: 2, title: "New Student Enrolled", date: "2024-02-26 10:30" },
+    { id: 3, title: "Exam Schedule Updated", date: "2024-02-25 15:45" },
+  ]);
+
+  const unreadCount = notifications.length; // Notification count
+
+  const handleNotificationClick = () => {
+    router.push({
+      pathname: "/notification",
+      query: { count: unreadCount }, // Pass count as query
+    });
+  };
+
 
   const role = Cookies.get("role");
 
@@ -274,9 +285,14 @@ export default function Layout({children}) {
         control={<MaterialUISwitch checked={mode === "dark" ? true : false} onChange={() => dispatch(toggleDarkMode())} />}
         label=""
       />
-     <Badge title="Notification" onClick={handleNotification} style={{cursor: 'pointer'}} href color="secondary" badgeContent={99}>
-  <NotificationsNone/>
-</Badge>
+     <Badge
+        badgeContent={unreadCount}
+        color="secondary"
+        style={{ cursor: "pointer" }}
+        onClick={handleNotificationClick}
+      >
+        <NotificationsNone />
+      </Badge>
       <Tooltip title="Account settings">
           <IconButton
             onClick={handleProfileClick}

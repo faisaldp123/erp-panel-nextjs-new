@@ -5,11 +5,50 @@ import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 import CancelIcon from "@mui/icons-material/Cancel";
+import Link from "next/link";
 
 const Support = () => {
+   // Hardcoded notifications
+  //  const notifications = [
+  //   { id: 1,
+  //     title: "Home",
+  //     date: "/support",
+  //   },
+  //   { id: 2,
+  //     title: "Admission Tickets",
+  //     date: "/support/admission-tickets",
+  //   },
+  //   { id: 3,
+  //     title: "Re-Registration Tickets",
+  //     date: "/admission-tickets",
+  //   },
+  //   { id: 4,
+  //     title: "Re-Examination Tickets",
+  //     date: "/admission-tickets",
+  //   },
+  // ];
+
+  // const [selectedNotification, setSelectedNotification] = useState(notifications[0]);
 
   return (
-    <Box sx={{ p: 3 }}>
+    <div className="flex h-screen">
+{/* Left Section - Notifications List */}
+{/* <aside className="w-64 bg-white shadow-md p-4 hidden md:block">
+        <h2 className="text-xl font-bold text-purple-700">Home || Support</h2>
+        <ul className="mt-4 space-y-2">
+          {notifications.map((notification) => (
+            <li
+              key={notification.id}
+              className={`p-3 rounded-md cursor-pointer ${selectedNotification.id === notification.id ? "bg-purple-200 text-purple-900" : "bg-gray-100 text-gray-700"}`}
+              onClick={() => setSelectedNotification(notification)}
+            >
+              <Link href={notification.date} className="font-medium">{notification.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </aside> */}
+
+    <Box sx={{ p: 3, width: '100%' }}>
       {/* Page Header */}
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 3, color: "#6C27F7" }}>
         Support - Home
@@ -516,6 +555,7 @@ const Support = () => {
 
       </Box>
           </Box>
+          </div>
   );
 };
 

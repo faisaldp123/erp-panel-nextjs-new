@@ -21,6 +21,7 @@
     "container": "^0.0.2",
     "dayjs": "^1.11.10",
     "js-cookie": "^3.0.5",
+    "lucide-react": "^0.476.0",
     "next": "^14.2.23",
     "nextjs-progressbar": "^0.0.16",
     "razorpay": "^2.9.5",
