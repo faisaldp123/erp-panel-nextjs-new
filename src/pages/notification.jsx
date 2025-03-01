@@ -13,10 +13,10 @@ const NotificationPage = () => {
   const [selectedNotification, setSelectedNotification] = useState(notifications[0]);
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen">
 
       {/* Left Section - Notifications List */}
-      <aside className="w-64 bg-white shadow-md p-4 hidden md:block">
+      <aside className="w-64 border rounded-lg shadow-md p-4 hidden md:block">
         <h2 className="text-xl font-bold text-purple-700">Recent Notifications</h2>
         <ul className="mt-4 space-y-2">
           {notifications.map((notification) => (
@@ -33,11 +33,11 @@ const NotificationPage = () => {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 p-6">
+      <div className="flex-1 border rounded-lg ms-4 shadow-lg p-6">
         <h1 className="text-3xl font-bold text-purple-700">Notify</h1>
 
         {/* Display Selected Notification */}
-        <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
+        <div className="mt-4 border p-4 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold">{selectedNotification.title}</h2>
           <span className="text-sm text-green-600 bg-green-200 px-2 py-1 rounded-md">{selectedNotification.date}</span>
           <p className="mt-2 text-gray-700">{selectedNotification.content}</p>
