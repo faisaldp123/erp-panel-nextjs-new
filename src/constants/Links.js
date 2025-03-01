@@ -1,28 +1,38 @@
-import { AccountBalance, AddToPhotos, Airplay, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, DockSharp, GolfCourse, HeadsetMic, HeadsetMicOutlined, Home, MenuBook, NewspaperSharp, Person, PersonSearch, ReceiptLong, Source, VerifiedUser} from '@mui/icons-material';
+import { AccountBalance, AddToPhotos, Airplay, Assignment, Book, BookOnlineOutlined, BookSharp, CalendarMonth, CalendarViewMonthRounded, CardTravel, Dashboard, DescriptionOutlined, DockSharp, GolfCourse, HeadsetMic, HeadsetMicOutlined, Home, HomeMaxOutlined, MenuBook, NewspaperSharp, Payment, Person, PersonSearch, ReceiptLong, Source, VerifiedUser} from '@mui/icons-material';
 import { Card } from '@mui/material';
 
 
-export const adminLinks = [
+export const superAdminLinks = [
     {
-        label: "Dashboard",
-        icon: <Dashboard/>,
+        label: "General",
+        icon: <Home/>,
         url: "/dashboard"
     },
     // 
     {
         label: "Students",
-        icon: <PersonSearch/>,
+        icon: <Person/>,
         url: "/students"
     },
     {
-        label: "Courses",
-        icon: <MenuBook/>,
-        url: "/courses"
+        label: "Exams",
+        icon: <Assignment/>,
+        url: "/exam"
     },
     {
-            label: "Profile",
-            icon: <PersonSearch/>,
+            label: "Accounts",
+            icon: <Payment/>,
             url: "/profile/list"
+        },
+        {
+            label: "Support",
+            icon: <HeadsetMicOutlined/>,
+            url: "/support"
+        },
+        {
+            label: "Docs",
+            icon: <Source/>,
+            url: "/docs"
         },
         // {
         //     label: "Transaction",
@@ -31,7 +41,7 @@ export const adminLinks = [
         // },
 ]
 
-export const superAdminLinks = [
+export const adminLinks = [
     {
         label: "Home",
         icon: <Home/>,
