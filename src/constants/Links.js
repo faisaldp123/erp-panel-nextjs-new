@@ -22,7 +22,7 @@ export const superAdminLinks = [
     {
             label: "Accounts",
             icon: <Payment/>,
-            url: "/profile/list"
+            url: "/accounts"
         },
         {
             label: "Support",
