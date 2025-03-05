@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 const examLinks = [
-  { id: 1, title: "Home", path: "/exam" },
+  { id: 1, title: "Home", path: "/accounts" },
   { id: 2, title: "Receipts", path: "/accounts/receipts/list" },
   { id: 3, title: "Transaction", path: "/accounts/transaction/list" },
   { id: 4, title: "Process Student", path: "/accounts/process-students/list" },
